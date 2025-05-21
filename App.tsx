@@ -1,9 +1,7 @@
 import React from 'react';
 import {
   StatusBar,
-  StyleSheet,
   useColorScheme,
-  View,
   SafeAreaView,
 } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -46,13 +44,5 @@ function App(): React.JSX.Element {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  innerContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;
