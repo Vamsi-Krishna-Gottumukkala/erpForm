@@ -51,7 +51,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
       <TouchableOpacity style={styles.loginbtn} onPress={() => navigation.navigate('ERP')}>
         <Text style={styles.buttonText}>Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={[styles.loginbtn, styles.googlebtn]} onPress={() => {}}>
+      <TouchableOpacity style={[styles.loginbtn, styles.googlebtn]} onPress={() => navigation.navigate('ERP')}>
         <Text style={[styles.buttonText, styles.googlebtnText]}>Login with Google</Text>
       </TouchableOpacity>
       <Text style={styles.signUp}>Don't have an account? Sign up</Text>
