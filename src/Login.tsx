@@ -68,8 +68,9 @@ const styles = StyleSheet.create({
   },
   head: {
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    width:'85%'
   },
   heading: {
     fontSize: 20,
