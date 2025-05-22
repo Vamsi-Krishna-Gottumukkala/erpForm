@@ -9,6 +9,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
 import Login from './src/Login';
 import ERP from './src/ERP';
+import FormsList from './src/FormsList';
+import FormDetail from './src/FormDetail';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
@@ -17,6 +19,8 @@ enableScreens();
 export type RootStackParamList = {
   Login: undefined;
   ERP: undefined;
+  FormsList: undefined;
+  FormDetail: undefined;
 };
 
 
@@ -39,6 +43,8 @@ function App(): React.JSX.Element {
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="ERP" component={ERP} />
+          <Stack.Screen name="FormsList" component={FormsList} />
+          <Stack.Screen name="FormDetail" component={FormDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
