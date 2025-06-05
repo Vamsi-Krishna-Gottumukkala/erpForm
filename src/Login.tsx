@@ -25,31 +25,32 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   const handleGoogleLogin = async () => {
     try {
-      await GoogleSignin.hasPlayServices();
-      const { idToken } = await GoogleSignin.signIn();
-  
-      // Firebase login (optional if you're just using Google sign-in)
+      await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+      const userInfo = await GoogleSignin.signIn();
+
+      // 👇 Fix: idToken may not be typed correctly
+      const idToken = (userInfo as any)?.idToken;
+
+      if (!idToken) {
+        throw new Error('ID token not found in user info');
+      }
+
       const googleCredential = auth.GoogleAuthProvider.credential(idToken);
-      const userCredential = await auth().signInWithCredential(googleCredential);
-  
-      // ✅ Send ID token to your FastAPI backend
+      await auth().signInWithCredential(googleCredential);
+
       const response = await fetch('http://192.168.29.202:8000/auth/google', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id_token: idToken }),
       });
-  
+
       if (!response.ok) {
         throw new Error('Backend token verification failed');
       }
-  
+
       const data = await response.json();
-      console.log('JWT:', data.access_token);
       Alert.alert('Success', `Welcome ${data.user.name}`);
-  
-      // You can now save data.access_token to secure storage if needed
       navigation.navigate('ERP');
-  
     } catch (error: any) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         Alert.alert('Cancelled', 'User cancelled sign-in');
@@ -59,7 +60,6 @@ const Login: React.FC<Props> = ({ navigation }) => {
       }
     }
   };
-  
 
   return (
     <View style={styles.container}>
