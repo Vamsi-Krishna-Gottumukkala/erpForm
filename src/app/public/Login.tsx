@@ -5,6 +5,7 @@ import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } fro
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/shared/RootStackedList';
 import React from 'react';
+import { Languages } from 'lucide-react-native';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -70,7 +71,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
             Enter your email below to login to your account
           </Text>
         </View>
-        <Image source={require('../assets/translate.png')} style={styles.image} />
+        <Languages size={42}></Languages>
       </View>
       <View style={styles.credentials}>
         <Text style={styles.label}>Email</Text>
