@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/shared/RootStackedList';
+import { Languages } from 'lucide-react-native';
 
 type FormDetailNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -46,11 +47,7 @@ const FormDetail: React.FC<Props> = ({ navigation }) => {
         </TouchableOpacity>
         <Text style={styles.title}>ERP 1</Text>
         <TouchableOpacity style={styles.translateButton}>
-          <Image
-            source={require('../assets/translate.png')}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Languages size={42}></Languages>
         </TouchableOpacity>
       </View>
 

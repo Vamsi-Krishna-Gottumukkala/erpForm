@@ -10,6 +10,7 @@ import {
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/shared/RootStackedList';
 import React from 'react';
+import { Languages } from 'lucide-react-native';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -30,11 +31,7 @@ const ERP: React.FC<Props> = ({ navigation }) => {
             Here's a list of your ERP Systems for you!
           </Text>
         </View>
-        <Image
-          source={require('../assets/translate.png')}
-          style={styles.image}
-          resizeMode="contain"
-        />
+        <Languages size={42}></Languages>
       </View>
 
       <ScrollView contentContainerStyle={styles.block}>

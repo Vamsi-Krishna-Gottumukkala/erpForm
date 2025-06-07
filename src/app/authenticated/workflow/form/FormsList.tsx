@@ -3,6 +3,7 @@ import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '@/shared/RootStackedList';
+import { Languages } from 'lucide-react-native';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -55,11 +56,7 @@ const FormsList: React.FC<Props> = ({ navigation }) => {
           <Text style={styles.subtitle}>15 Forms</Text>
         </View>
         <TouchableOpacity style={styles.translateButton}>
-          <Image
-            source={require('../assets/translate.png')}
-            style={styles.image}
-            resizeMode="contain"
-          />
+          <Languages size={42}></Languages>
         </TouchableOpacity>
       </View>
 
