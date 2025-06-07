@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, FlatList, StyleSheet, Image } from 'react
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../App';
+import { RootStackParamList } from '@/shared/RootStackedList';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,

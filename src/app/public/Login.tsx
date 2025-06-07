@@ -3,7 +3,7 @@ import auth from '@react-native-firebase/auth';
 import { useEffect } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../App';
+import { RootStackParamList } from '@/shared/RootStackedList';
 import React from 'react';
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;

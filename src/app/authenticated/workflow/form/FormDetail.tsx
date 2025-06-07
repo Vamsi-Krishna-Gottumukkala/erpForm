@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity, TextInput, StyleSheet, ScrollView, Modal,
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../App';
+import { RootStackParamList } from '@/shared/RootStackedList';
 
 type FormDetailNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
