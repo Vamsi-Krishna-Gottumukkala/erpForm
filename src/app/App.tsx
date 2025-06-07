@@ -14,7 +14,6 @@ import FormDetail from './authenticated/workflow/form/FormDetail';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { RootStackParamList } from '@/shared/RootStackedList';
-import SampleForm from '@/SampleForm';
 
 enableScreens();
 
@@ -42,7 +41,6 @@ function App(): React.JSX.Element {
           <Stack.Screen name="ERP" component={ERP} />
           <Stack.Screen name="FormsList" component={FormsList} />
           <Stack.Screen name="FormDetail" component={FormDetail} />
-          <Stack.Screen name="SampleForm" component={SampleForm} />
           
         </Stack.Navigator>
       </NavigationContainer>
